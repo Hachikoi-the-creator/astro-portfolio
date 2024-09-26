@@ -1,0 +1,14 @@
+---
+import DesktopNavbar from "./DesktopNavbar.tsx";
+import MobileNavbar from "./MobileNavbar.tsx";
+---
+
+<!-- mobile -->
+<div class="md:hidden">
+  <MobileNavbar />
+</div>
+
+<!-- desktop -->
+<div class="hidden md:block">
+  <DesktopNavbar />
+</div>

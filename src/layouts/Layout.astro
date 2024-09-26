@@ -1,50 +1,47 @@
 ---
-interface Props {
+import NavbarsContainer from '~/components/navbars/NavbarsContainer.astro';
+import '~/styles/globals.css'
+
+type Props = {
 	title: string;
-}
+};
 
 const { title } = Astro.props;
 ---
 
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-dark-bg">
+    <main
+      class="bg-light-bg container mx-auto relative shadow-realistic-solid border-2 border-black mt-8"
+    >
+      <slot />
+    </main>
+	<NavbarsContainer/>
+	<div class="dot-pattern"></div>
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+
+
+<style is:inline>
+    .dot-pattern{
+      position: fixed;
+      left: 0;
+      bottom: 20%; /* Start the pattern from 20% up from the bottom */
+      top: 20%; /* End the pattern 20% from the top */
+      width: 40px; /* Adjust as needed */
+      background-image: radial-gradient(rgba(97, 0, 90, 0.635) 1px, transparent 1px);
+      background-size: 10px 10px; /* Size of each dot and spacing */
+    }
+
 </style>
+
