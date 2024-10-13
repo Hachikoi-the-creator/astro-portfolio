@@ -1,0 +1,8 @@
+{
+  "prettier.ignorePath": ".gitignore",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#470063",
+    "titleBar.activeBackground": "#010041",
+    "titleBar.activeForeground": "#ffbb62"
+  } // Don't run prettier for files listed in .gitignore
+}

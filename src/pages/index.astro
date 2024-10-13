@@ -1,7 +1,9 @@
 ---
+import BurgerMenu from "~/components/navbars/BurgerMenu.astro";
 import Card from "../components/Card.astro";
 import ControlBtnsGimmick from "../components/ControlBtnsGimmick.astro";
 import Layout from "../layouts/Layout.astro";
+import MobileNavbar from "~/components/navbars/MobileNavbar";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -11,6 +13,8 @@ import Layout from "../layouts/Layout.astro";
       <span class="text-sm mt-4">(Ruby-dev)</span>
     </h1>
     <ControlBtnsGimmick className="absolute top-1 right-1" />
+    <!-- <BurgerMenu  /> -->
+     <MobileNavbar client:visible/>
   </main>
 </Layout>
 

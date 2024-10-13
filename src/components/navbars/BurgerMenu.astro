@@ -1,0 +1,41 @@
+---
+// BurgerMenu.astro
+---
+
+<div class="burger-menu">
+    <button
+      id="open-menu"
+      class="fixed top-4 right-4 z-50 px-4 py-2 bg-blue-500 text-white rounded"
+      aria-label="Open menu"
+    >
+      <span class="block w-6 h-0.5 bg-white mb-1"></span>
+      <span class="block w-6 h-0.5 bg-white mb-1"></span>
+      <span class="block w-6 h-0.5 bg-white"></span>
+    </button>
+  
+    <div
+      id="menu-content"
+      class="fixed top-0 right-0 w-full md:w-4/5 h-full bg-gray-200 p-4 transition-transform duration-300 ease-in-out transform translate-x-full"
+    >
+     
+      <nav class="mt-16">
+        <ul class="space-y-4">
+          <li><a href="#" class="text-blue-600 hover:underline">Home</a></li>
+          <li><a href="#" class="text-blue-600 hover:underline">About</a></li>
+          <li><a href="#" class="text-blue-600 hover:underline">Services</a></li>
+          <li><a href="#" class="text-blue-600 hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  
+  <script>
+    const menuContent = document.querySelector('#menu-content');
+    const openButton = document.querySelector('#open-menu');
+  
+    function toggleMenu() {
+      menuContent?.classList.toggle('translate-x-full');
+    }
+  
+    openButton?.addEventListener('click', toggleMenu);
+  </script>
